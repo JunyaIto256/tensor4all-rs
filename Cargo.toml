@@ -61,3 +61,14 @@ tenferro-cpu = { git = "https://github.com/tensor4all/tenferro-rs.git", rev = "f
 tenferro-einsum = { git = "https://github.com/tensor4all/tenferro-rs.git", rev = "f68b33d9e06cc0af8d2b9c40f7c52d8972cd1266", default-features = false }
 tenferro-linalg = { git = "https://github.com/tensor4all/tenferro-rs.git", rev = "f68b33d9e06cc0af8d2b9c40f7c52d8972cd1266", default-features = false }
 tenferro-tensor = { git = "https://github.com/tensor4all/tenferro-rs.git", rev = "f68b33d9e06cc0af8d2b9c40f7c52d8972cd1266", default-features = false }
+
+# Patch tenferro to use the local futexfix checkout (futex deadlock fix).
+# Remove this section once tenferro-rs upstream publishes a release
+# that includes TENFERRO_NUM_THREADS support.
+[patch."https://github.com/tensor4all/tenferro-rs.git"]
+tenferro-runtime = { path = "../tenferro-rs/tenferro-runtime" }
+tenferro-ad = { path = "../tenferro-rs/tenferro-ad" }
+tenferro-cpu = { path = "../tenferro-rs/tenferro-cpu" }
+tenferro-einsum = { path = "../tenferro-rs/tenferro-einsum" }
+tenferro-linalg = { path = "../tenferro-rs/tenferro-linalg" }
+tenferro-tensor = { path = "../tenferro-rs/tenferro-tensor" }
